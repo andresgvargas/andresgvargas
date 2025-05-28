@@ -1,0 +1,54 @@
+# Site settings
+title: Andres G. Vargas D.
+description: Forensic Acoustics Expert | AI & Audio Processing Researcher | Sound Engineer
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://andresgvargas.github.io" # the base hostname & protocol for your site
+
+# Personal info
+author:
+  name: Andres G. Vargas D.
+  email: andresgvd31@gmail.com
+  location: Bogotá D.C., Colombia
+  linkedin: ing-andresg-vargas
+  github: andresgvargas
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Theme
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

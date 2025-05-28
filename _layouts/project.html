@@ -1,0 +1,178 @@
+---
+layout: default
+---
+
+<div class="project-header">
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}
+    <p class="project-description">{{ page.description }}</p>
+  {% endif %}
+  
+  {% if page.technologies %}
+  <div class="technologies">
+    {% for tech in page.technologies %}
+      <span class="tech-tag">{{ tech }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+  
+  <div class="project-meta">
+    {% if page.github %}
+      <a href="{{ page.github }}" class="btn btn-secondary" target="_blank">
+        <i class="fab fa-github"></i> View on GitHub
+      </a>
+    {% endif %}
+    {% if page.demo %}
+      <a href="{{ page.demo }}" class="btn btn-primary" target="_blank">
+        <i class="fas fa-external-link-alt"></i> Live Demo
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+<div class="project-content">
+  {{ content }}
+</div>
+
+<div class="project-navigation">
+  <a href="/projects" class="btn btn-outline">← Back to Projects</a>
+</div>
+
+<style>
+.project-header {
+  text-align: center;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.project-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.project-description {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.technologies {
+  margin-bottom: 2rem;
+}
+
+.tech-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin: 0.25rem;
+}
+
+.project-meta {
+  margin-top: 2rem;
+}
+
+.project-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  line-height: 1.7;
+}
+
+.project-content h2 {
+  color: #333;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.project-content h3 {
+  color: #667eea;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.project-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin: 2rem 0;
+}
+
+.project-content pre {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  border-left: 4px solid #667eea;
+}
+
+.project-navigation {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #5a6fd8;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.btn-outline:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .project-header h1 {
+    font-size: 2rem;
+  }
+  
+  .project-content {
+    padding: 0 1rem;
+  }
+  
+  .project-meta .btn {
+    display: block;
+    margin: 0.5rem auto;
+    max-width: 200px;
+  }
+}
+</style>
